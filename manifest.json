@@ -1,0 +1,29 @@
+{
+   "manifest_version" : 2,
+   "name" : "Sprawdzamyjakjest skróty klawiszowe",
+   "version" : "1.0.0",
+   "description": "Sprawdzamyjakjest skróty klawiszowe",
+   
+   
+   "permissions": [
+   "activeTab"
+   ],
+  
+    "background": {
+    "scripts": [
+      "popup.js"
+    ],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": [ 
+		"https://sprawdzamyjakjest.pl/#!/annotations/mission/16/task"		
+	  ],
+      "js": [ 
+        "popup.js"
+       ]
+    }
+  ]
+
+}
