@@ -3,12 +3,8 @@
    "name" : "Sprawdzamyjakjest skróty klawiszowe",
    "version" : "1.0.0",
    "description": "Sprawdzamyjakjest skróty klawiszowe",
-   
-   
-   "permissions": [
-   "activeTab"
-   ],
-  
+   "author": "Krzysztof Bobnis",
+     
     "background": {
     "scripts": [
       "popup.js"
