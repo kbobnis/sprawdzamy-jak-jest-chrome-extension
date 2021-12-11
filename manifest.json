@@ -18,7 +18,7 @@
   "content_scripts": [
     {
       "matches": [ 
-		"https://sprawdzamyjakjest.pl/#!/annotations/mission/16/task"		
+		"https://sprawdzamyjakjest.pl/*"
 	  ],
       "js": [ 
         "popup.js"

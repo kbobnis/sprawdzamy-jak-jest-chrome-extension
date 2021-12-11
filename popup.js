@@ -15,6 +15,31 @@ function removeLogo(){
 	}
 }
 
+function addKeyboardShortcutInformation(){
+	  let elements = document.getElementsByClassName('answer-single-btn');
+		
+	  if (elements.length == 0){
+		elements = document.getElementsByClassName('answer-multi-btn');
+	  }
+	  
+	  if (elements.length > 0 && elements[0].innerHTML.includes("[ klawisz:") == false){
+		  for(let i=0; i < elements.length; i++){
+			  elements[i].innerHTML += "<font color=gray> [ klawisz: " + String.fromCharCode('a'.charCodeAt(0) + i) + "] </font>";
+		  }
+	  
+		buttonToPress = document.getElementsByClassName('question-submit-btn');
+	  
+	    if (buttonToPress != null && buttonToPress[0] != null){
+			buttonToPress = buttonToPress[0];
+		  } else {		  
+		  //if this is next document, try another thing
+		  buttonToPress = document.getElementsByClassName('ui-btn-black')[1]
+		  }
+		  
+		  buttonToPress.innerHTML += "<font color=gray size=3px> [ klawisz: q] </font>";
+	  }
+}
+
 function continueOnFeedback(){
 	
 	removeLogo();
@@ -28,7 +53,6 @@ function continueOnFeedback(){
 
 	var questionEl = document.getElementById('task-question');
 	if (questionEl != null){
-		console.log("question el is: " + questionEl.innerHTML);
 		if (questionEl.innerHTML == "Pytanie 8"){
 			console.log("question el is: " + questionEl);
 			let elements = document.getElementsByClassName('answer-single-btn');
@@ -41,6 +65,8 @@ function continueOnFeedback(){
 			buttonToPress[0].click();
 		}
 	}
+	
+	addKeyboardShortcutInformation();
 }
 
 document.onkeydown = function(event) {
